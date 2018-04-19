@@ -9,15 +9,7 @@ import android.widget.Button;
 
 public class CustomDialogClass extends Dialog implements
         android.view.View.OnClickListener {
-    /**
-     *
-     *
-     *
-     *
-     *
-     *
-     * bas de gada
-     * */
+
 
     public Activity c;
     public Dialog d;
