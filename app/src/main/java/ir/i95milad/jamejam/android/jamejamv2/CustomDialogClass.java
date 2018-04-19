@@ -10,7 +10,13 @@ import android.widget.Button;
 public class CustomDialogClass extends Dialog implements
         android.view.View.OnClickListener {
     /**
-     * hello world hadi;hello world hadi;
+     *
+     *
+     *
+     *
+     *
+     *
+     * bas de gada
      * */
 
     public Activity c;
