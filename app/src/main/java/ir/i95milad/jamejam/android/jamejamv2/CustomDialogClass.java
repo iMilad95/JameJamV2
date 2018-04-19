@@ -7,18 +7,18 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import butterknife.BindView;
+
 public class CustomDialogClass extends Dialog implements
         android.view.View.OnClickListener {
+    @BindView(R.id.btn_yes) Button btnYes;
+    @BindView(R.id.btn_no) Button btnNo;
+    private Activity currentActivity;
 
-
-    public Activity c;
-    public Dialog d;
-    public Button yes, no;
-
-    public CustomDialogClass(Activity a) {
-        super(a);
+    public CustomDialogClass(Activity currentActivity) {
+        super(currentActivity);
         // TODO Auto-generated constructor stub
-        this.c = a;
+        this.currentActivity = currentActivity;
     }
 
     @Override
@@ -26,10 +26,8 @@ public class CustomDialogClass extends Dialog implements
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.custom_dialog);
-        yes = (Button) findViewById(R.id.btn_yes);
-        no = (Button) findViewById(R.id.btn_no);
-        yes.setOnClickListener(this);
-        no.setOnClickListener(this);
+        btnYes.setOnClickListener(this);
+        btnNo.setOnClickListener(this);
 
     }
 
@@ -37,7 +35,7 @@ public class CustomDialogClass extends Dialog implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_yes:
-                c.finish();
+                currentActivity.finish();
                 break;
             case R.id.btn_no:
                 dismiss();
