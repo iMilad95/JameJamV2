@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
     @BindView(R.id.sign_in_btn) Button signIn;
+    @BindView(R.id.sign_up_btn) Button signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,13 @@ public class SplashActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 SplashActivity.this.finish();
+            }
+        });
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomDialogClass cdd=new CustomDialogClass(SplashActivity.this);
+                cdd.show();
             }
         });
     }
